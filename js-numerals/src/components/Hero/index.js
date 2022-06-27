@@ -58,14 +58,14 @@ export const Hero = (val) => {
     else if (units === 9) str = "NINETEEN " + str;
     else if (units === 0) str = "TEN " + str;
 
-    if (tens === 2) str = "TWENTY " + str;
-    else if (tens === 3) str = "THIRTY " + str;
-    else if (tens === 4) str = "FOURTY " + str;
-    else if (tens === 5) str = "FIFTY " + str;
-    else if (tens === 6) str = "SIXTY " + str;
-    else if (tens === 7) str = "SEVENTY " + str;
-    else if (tens === 8) str = "EIGHTY " + str;
-    else if (tens === 9) str = "NINETY " + str;
+    if (tens === 2) str = "TWENTY" + str;
+    else if (tens === 3) str = "THIRTY-" + str;
+    else if (tens === 4) str = "FORTY-" + str;
+    else if (tens === 5) str = "FIFTY-" + str;
+    else if (tens === 6) str = "SIXTY-" + str;
+    else if (tens === 7) str = "SEVENTY-" + str;
+    else if (tens === 8) str = "EIGHTY-" + str;
+    else if (tens === 9) str = "NINETY-" + str;
 
     if ((hundreds > 0 || Math.floor(val / 1000) > 0) && (tens > 0 || units > 0))
       str = "AND " + str;
