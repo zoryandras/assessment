@@ -15,9 +15,9 @@ it("test the function that converts number to text", () => {
   expect(Hero(12).toLowerCase()).toEqual("twelve");
   expect(Hero(110).toLowerCase()).toEqual("one hundred and ten");
   expect(Hero(1100).toLowerCase()).toEqual("one thousand one hundred");
-  expect(Hero(999).toLowerCase()).toEqual("nine hundred and ninety nine");
+  expect(Hero(999).toLowerCase()).toEqual("nine hundred and ninety-nine");
   expect(Hero(1987).toLowerCase()).toEqual(
-    "one thousand nine hundred and eighty seven"
+    "one thousand nine hundred and eighty-seven"
   );
   expect(Hero(1000000).toLowerCase()).toEqual("one million");
   expect(Hero(1000001).toLowerCase()).toEqual("one million and one");
@@ -26,11 +26,28 @@ it("test the function that converts number to text", () => {
     "two million one hundred and one thousand and one"
   );
   expect(Hero(1234567).toLowerCase()).toEqual(
-    "one million two hundred and thirty four thousand five hundred and sixty seven"
+    "one million two hundred and thirty-four thousand five hundred and sixty-seven"
   );
   expect(Hero(1000000000).toLowerCase()).toEqual("one billion");
   expect(Hero(1000000001).toLowerCase()).toEqual("one billion and one");
   expect(Hero(1000000000000).toLowerCase()).toEqual("one trillion");
   expect(Hero(1000000000000000).toLowerCase()).toEqual("one quadrillion");
   expect(Hero(10000000000000000000000).toLowerCase()).toEqual("ten zoinks!");
+  expect(Hero(7).toLowerCase()).toEqual("seven");
+  expect(Hero(42).toLowerCase()).toEqual("forty-two");
+  expect(Hero(1999).toLowerCase()).toEqual(
+    "one thousand nine hundred and ninety-nine"
+  );
+  expect(Hero(2001).toLowerCase()).toEqual("two thousand and one");
+  expect(Hero(17999).toLowerCase()).toEqual(
+    "seventeen thousand nine hundred and ninety-nine"
+  );
+  expect(Hero(100001).toLowerCase()).toEqual("one hundred thousand and one");
+  expect(Hero(342251).toLowerCase()).toEqual(
+    "three hundred and forty-two thousand two hundred and fifty-one"
+  );
+  expect(Hero(1300420).toLowerCase()).toEqual(
+    "one million three hundred thousand four hundred and twenty"
+  );
+
 });
