@@ -70,6 +70,12 @@ export const HeroResult = styled.div`
   border: #009900 solid;
   border-radius: 20px;
   padding: 20px;
+  min-height: 50px;
+  max-height: 300px;
   margin: 10px;
   font-size: 2em;
+
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
