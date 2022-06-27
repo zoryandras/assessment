@@ -29,27 +29,27 @@ export const HeroH2 = styled.h2`
   text-align: center;
 
   @media screen and (max-width: 768px) {
-    font-size: 25px;
+    font-size: 30px;
   }
 
   @media screen and (max-width: 480px) {
-    font-size: 18px;
+    font-size: 25px;
   }
 `;
 
 export const HeroP = styled.p`
   margin-top: 24px;
   color: #fff;
-  font-size: 24px;
+  font-size: 35px;
   text-align: center;
   max-width: 1200px;
 
   @media screen and (max-width: 768px) {
-    font-size: 24px;
+    font-size: 30px;
   }
 
   @media screen and (max-width: 480px) {
-    font-size: 18px;
+    font-size: 25px;
   }
 `;
 
@@ -69,7 +69,7 @@ export const HeroInput = styled.input`
 export const HeroResult = styled.div`
   border: #009900 solid;
   border-radius: 20px;
-  padding: 25px;
+  padding: 20px;
   margin: 10px;
   font-size: 2em;
 `;
