@@ -45,7 +45,7 @@ export const Hero = (val) => {
       else if (units === 8) str = "EIGHT " + str;
       else if (units === 9) str = "NINE " + str;
       else {
-        //do nothing
+        //nothing
       }
     else if (units === 1) str = "ELEVEN " + str;
     else if (units === 2) str = "TWELVE " + str;
@@ -89,12 +89,12 @@ export const Hero = (val) => {
     else if (numberName === "BILLION") numberName = "TRILLION";
     else if (numberName === "TRILLION") numberName = "QUADRILLION";
     else if (numberName === "QUADRILLION") numberName = "QUINTILLION";
-    else numberName = "ERROR";
+    else numberName = "ZOINKS!";
   }
 
   return str.trim();
 };
-class NumberEdit extends React.Component {
+class EditNumber extends React.Component {
   render() {
     return (
       <HeroInput
@@ -126,7 +126,7 @@ export class NumberToText extends React.Component {
     this.state = { number: 123 };
   }
 
-  doNumberChange = (event) => {
+  numberChange = (event) => {
     this.setState({ number: event.target.value });
   };
 
@@ -136,12 +136,12 @@ export class NumberToText extends React.Component {
         <HeroContent>
           <HeroH2>Number to Text Converter</HeroH2>
           <HeroP>Just write a number and magical stuff will happen!</HeroP>
-          <NumberEdit
+          <EditNumber
             number={this.state.number}
-            onChange={this.doNumberChange}
+            onChange={this.numberChange}
           />
           <br />
-          <HeroP>Your number in text is:</HeroP>
+          <HeroP>Your number is:</HeroP>
           <DisplayNumberAsText number={this.state.number} />
         </HeroContent>
       </HeroContainer>
