@@ -26,11 +26,16 @@ export const FooterInformation = styled.div`
     text-decoration: none;
     color: #66cc00;
   }
-
+  
   a:visited {
     color: green;
-    text-decoration: none;
   }
+
+  a:hover {
+      transition: all 0.5s ease-in-out;
+      color: #66FF66
+  }
+
 `;
 
 export const SiteCopy = styled.small`

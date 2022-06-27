@@ -14,7 +14,7 @@ function Footer() {
           If you're interested in my other projects, visit
           <a href="https://zoryandras.github.io/sass-project/dist/index.html">
             {" "}
-            My Demo Page! :)
+            My Demo Page!
           </a>
         </FooterInformation>
         <SiteCopy>varga andras © {new Date().getFullYear()}</SiteCopy>
