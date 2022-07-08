@@ -53,7 +53,6 @@ function loadList() {
   check();
 }
 
-
 function drawList() {
   document.getElementById("currentPage").innerText = currentPage;
   document.getElementById("numberOfPages").innerText = numberOfPages;
@@ -75,6 +74,18 @@ function drawList() {
     </div>
     </li>`;
     lockUser();
+  }
+}
+
+function lockUser() {
+  const cards = document.querySelectorAll(".info");
+  const buttons = document.querySelectorAll(".lockuser");
+
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () {
+      cards[i].classList.toggle("locked");
+      localStorage;
+    });
   }
 }
 
