@@ -90,9 +90,8 @@ function drawList() {
       ).toLocaleDateString()}</p>
     </div>
     <div class="buttons">
-      <button class="lockuser"><img class="icon" src="./icons/shield-lock.svg"/>LOCK</button>
-      <button id="edituser"><img class="icon" src="./icons/pencil-square.svg"/>EDIT</button>
-      <button id="newuser"><img class="icon" src="./icons/plus-circle.svg"/>NEW</button>
+      <button class="lockuser"><img class="icon" src="./icons/shield-lock.svg"/> LOCK</button>
+      <button id="edituser"><img class="icon" src="./icons/pencil-square.svg"/> EDIT</button>
     </div>
     </li>`;
     lockUser();
