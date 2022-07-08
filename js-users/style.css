@@ -113,3 +113,19 @@ li.card {
   height: 40px;
   width: 100px;
 }
+
+.info {
+  width: 50%;
+  min-width: 240px;
+}
+
+.info.locked{
+    color: #a1c9a7;
+    text-decoration: line-through;
+}
+
+.card p {
+  line-height: 0.2;
+  padding: 10px 0;
+  margin: 0;
+}
