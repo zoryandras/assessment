@@ -1,5 +1,11 @@
 const url = "https://assessment-users-backend.herokuapp.com/users";
 
+let list = new Array();
+let pageList = new Array();
+let currentPage = 1;
+let numberPerPage = 10;
+let numberOfPages = 0;
+
 function makeList() {
   async function fetchUsers(endpoint) {
     const res = await fetch(endpoint);
