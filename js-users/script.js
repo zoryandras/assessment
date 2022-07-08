@@ -18,6 +18,17 @@ function makeList() {
   fetchUsers(url);
 }
 
+function loadList() {
+  let begin = (currentPage - 1) * numberPerPage;
+  let end = begin + numberPerPage;
+
+  numberOfPages = getNumberOfPages();
+
+  pageList = list.slice(begin, end);
+  drawList();
+  check();
+}
+
 function drawList() {
   document.getElementById("currentPage").innerText = currentPage;
   document.getElementById("numberOfPages").innerText = numberOfPages;
