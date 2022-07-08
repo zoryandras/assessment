@@ -129,3 +129,16 @@ li.card {
   padding: 10px 0;
   margin: 0;
 }
+
+@media only screen and (max-width: 550px) {
+  li.card {
+    flex-direction: column;
+  }
+  .info {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+}
