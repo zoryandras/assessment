@@ -89,6 +89,15 @@ function lockUser() {
   }
 }
 
+function check() {
+  document.getElementById("next").disabled =
+    currentPage == numberOfPages ? true : false;
+  document.getElementById("previous").disabled =
+    currentPage == 1 ? true : false;
+  document.getElementById("first").disabled = currentPage == 1 ? true : false;
+  document.getElementById("last").disabled =
+    currentPage == numberOfPages ? true : false;
+}
 
 function load() {
 
