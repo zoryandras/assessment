@@ -52,3 +52,12 @@ function drawList() {
     lockUser();
   }
 }
+
+function load() {
+
+  makeList();
+  
+  loadList();
+}
+
+load();
