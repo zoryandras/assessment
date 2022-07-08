@@ -92,3 +92,24 @@ li.card {
   padding: 10px;
   margin: 10px;
 }
+
+.lockuser {
+  border-radius: 50px;
+  background: #75d19b;
+  height: 40px;
+  width: 100px;
+}
+
+#edituser{
+  border-radius: 50px;
+  background: #e9e772;
+  height: 40px;
+  width: 100px;
+}
+
+#newuser{
+  border-radius: 50px;
+  background: #cdcdca;
+  height: 40px;
+  width: 100px;
+}
