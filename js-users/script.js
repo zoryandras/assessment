@@ -6,6 +6,9 @@ let currentPage = 1;
 let numberPerPage = 10;
 let numberOfPages = 0;
 
+
+// fetching users data
+
 function makeList() {
   async function fetchUsers(endpoint) {
     const res = await fetch(endpoint);
@@ -18,9 +21,13 @@ function makeList() {
   fetchUsers(url);
 }
 
+// function about how many pages there are based on the fetched users
+
 function getNumberOfPages() {
   return Math.ceil(list.length / numberPerPage);
 }
+
+// function for pagination
 
 function nextPage() {
   currentPage += 1;
@@ -42,21 +49,36 @@ function lastPage() {
   loadList();
 }
 
+// pagination functions
+
 function loadList() {
   let begin = (currentPage - 1) * numberPerPage;
   let end = begin + numberPerPage;
-
+  
   numberOfPages = getNumberOfPages();
-
+  
   pageList = list.slice(begin, end);
   drawList();
   check();
 }
 
+function check() {
+  document.getElementById("next").disabled =
+    currentPage == numberOfPages ? true : false;
+  document.getElementById("previous").disabled =
+    currentPage == 1 ? true : false;
+  document.getElementById("first").disabled = currentPage == 1 ? true : false;
+  document.getElementById("last").disabled =
+    currentPage == numberOfPages ? true : false;
+}
+
+
+// rendering the cards with the data of users
+
 function drawList() {
-  document.getElementById("currentPage").innerText = currentPage;
-  document.getElementById("numberOfPages").innerText = numberOfPages;
-  document.getElementById("list").innerHTML = "";
+    document.getElementById("currentPage").innerText = currentPage;
+    document.getElementById("numberOfPages").innerText = numberOfPages;
+    document.getElementById("list").innerHTML = "";
 
   for (let r = 0; r < pageList.length; r++) {
     document.getElementById("list").innerHTML += `<li class="card" id="card">
@@ -77,6 +99,8 @@ function drawList() {
   }
 }
 
+// changing the class of the card when clicking on LOCK button
+
 function lockUser() {
   const cards = document.querySelectorAll(".info");
   const buttons = document.querySelectorAll(".lockuser");
@@ -89,15 +113,7 @@ function lockUser() {
   }
 }
 
-function check() {
-  document.getElementById("next").disabled =
-    currentPage == numberOfPages ? true : false;
-  document.getElementById("previous").disabled =
-    currentPage == 1 ? true : false;
-  document.getElementById("first").disabled = currentPage == 1 ? true : false;
-  document.getElementById("last").disabled =
-    currentPage == numberOfPages ? true : false;
-}
+// loading the page
 
 function load() {
 
