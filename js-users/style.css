@@ -1,13 +1,13 @@
 body {
   font-family: 'Finlandica', sans-serif;
   box-sizing: border-box;
-  background: rgba( 200, 213, 194, 0.6 );
+  background: #e6f3ff;
   font-size: 20px;
   margin: 0;
 }
 
 #header {
-  background: #193833;
+  background: #66b3ff;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -41,7 +41,7 @@ input[type='button'] {
   margin-bottom: 6px;
   margin-right: 4px;
   font-size: 16px;
-  background-color: #75d19b;
+  background-color: rgba(50, 82, 209, 0.6);
   color: #fff;
   border-radius: 4px;
   text-transform: capitalize;
@@ -76,7 +76,7 @@ li.card {
   text-align: center;
   padding: 10px;
   margin: 10px;
-  background: rgba(255, 255, 255, 0.6);
+  background: white;
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 6px );
   -webkit-backdrop-filter: blur( 6px );
@@ -86,7 +86,7 @@ li.card {
 
 .buttons {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
   gap: 30px;
   padding: 10px;
@@ -95,32 +95,36 @@ li.card {
 
 .lockuser {
   border-radius: 50px;
-  background: #75d19b;
+  background: #e6f3ff;
   height: 40px;
   width: 100px;
 }
 
 #edituser{
   border-radius: 50px;
-  background: #e9e772;
+  background: #ffffff;
   height: 40px;
   width: 100px;
 }
 
 #newuser{
   border-radius: 50px;
-  background: #cdcdca;
-  height: 40px;
-  width: 100px;
+  background: #ffffff;
+  height: 60px;
+  width: 200px;
 }
 
 .info {
   width: 50%;
   min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
 }
 
 .info.locked{
-    color: #a1c9a7;
+    color: #506dbc;
     text-decoration: line-through;
 }
 
