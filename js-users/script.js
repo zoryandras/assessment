@@ -11,3 +11,27 @@ function makeList() {
   }
   fetchUsers(url);
 }
+
+function drawList() {
+  document.getElementById("currentPage").innerText = currentPage;
+  document.getElementById("numberOfPages").innerText = numberOfPages;
+  document.getElementById("list").innerHTML = "";
+
+  for (let r = 0; r < pageList.length; r++) {
+    document.getElementById("list").innerHTML += `<li class="card" id="card">
+    <div class="info">
+      <p>First name: ${pageList[r].first_name}</p>
+      <p>Last name: ${pageList[r].last_name}</p>
+      <p>Created at: ${new Date(
+        pageList[r].created_at
+      ).toLocaleDateString()}</p>
+    </div>
+    <div class="buttons">
+      <button class="lockuser">LOCK</button>
+      <button id="edituser">EDIT</button>
+      <button id="newuser">NEW</button>
+    </div>
+    </li>`;
+    lockUser();
+  }
+}
