@@ -18,6 +18,30 @@ function makeList() {
   fetchUsers(url);
 }
 
+function getNumberOfPages() {
+  return Math.ceil(list.length / numberPerPage);
+}
+
+function nextPage() {
+  currentPage += 1;
+  loadList();
+}
+
+function previousPage() {
+  currentPage -= 1;
+  loadList();
+}
+
+function firstPage() {
+  currentPage = 1;
+  loadList();
+}
+
+function lastPage() {
+  currentPage = numberOfPages;
+  loadList();
+}
+
 function loadList() {
   let begin = (currentPage - 1) * numberPerPage;
   let end = begin + numberPerPage;
@@ -28,6 +52,7 @@ function loadList() {
   drawList();
   check();
 }
+
 
 function drawList() {
   document.getElementById("currentPage").innerText = currentPage;
@@ -53,10 +78,11 @@ function drawList() {
   }
 }
 
+
 function load() {
 
   makeList();
-  
+
   loadList();
 }
 
