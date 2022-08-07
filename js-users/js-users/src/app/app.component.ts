@@ -44,6 +44,7 @@ export class AppComponent implements OnInit {
       });
   }
 
+
   getAllUser() {
     this.api.getUser().subscribe({
       next: (res) => {
@@ -71,6 +72,7 @@ export class AppComponent implements OnInit {
         }
       });
   }
+
   deleteUser(id: number) {
     this.api.deleteUser(id).subscribe({
       next: (res) => {
