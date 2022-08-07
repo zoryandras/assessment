@@ -11,6 +11,7 @@ import { FormControl, FormGroup, NgForm } from '@angular/forms';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
+  p: number = 1;
   public users!: User[];
 
   constructor(private userService: UserService) {}
