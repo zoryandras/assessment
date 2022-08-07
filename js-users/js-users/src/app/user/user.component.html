@@ -9,7 +9,7 @@
             Add user
         </button>
         <form class="form-inline my-2 my-lg-0">
-            <input type="search" #key="ngModel" ngModel name="key"
+            <input type="search" (ngModelChange)="searchUsers(key.value)" #key="ngModel" ngModel name="key"
                 id="searchName" class="form-control mr-sm-2" placeholder="Search users by first name..." required>
         </form>
     </div>

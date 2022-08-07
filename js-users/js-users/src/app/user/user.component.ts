@@ -13,11 +13,21 @@ import { FormControl, FormGroup, NgForm } from '@angular/forms';
 export class UserComponent implements OnInit {
   public users!: User[];
 
-
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.getUsers()
+    this.getUsers();
+  }
+
+  public searchUsers(search: string): void {
+    if (search.length == 0) {
+      this.getUsers();
+    }
+    let searchedUsers: User[] = [];
+    this.users.forEach(
+      (item) => item.first_name.toLowerCase().indexOf(search) > -1 && searchedUsers.push(item)
+    );
+    this.users = searchedUsers;
   }
 
   public getUsers(): void {
