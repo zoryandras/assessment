@@ -1,0 +1,39 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.data-selected {
+  text-decoration: line-through;
+  font-weight: 400;
+  color: blue
+}
+
+@media only screen and (max-width: 600px){
+  body{
+    font-size: 8px;
+  }
+
+  span{
+    font-size: 12px;
+  }
+
+  button{
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+  }
+}
