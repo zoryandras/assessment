@@ -90,3 +90,41 @@
             </div>
         </div>
     </div>
+
+    <!-- Edit Modal -->
+    <div *ngIf="selectedUser" class="modal fade" id="updateUserModal" tabindex="-1" role="dialog"
+        aria-labelledby="UserEditModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateUserModalLabel">Edit User</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="was-validated" [formGroup]="editForm" (ngSubmit)="onUpdateUser()">
+                        <div class="form-group">
+                            <label for="first_name">First Name</label>
+                            <input [(ngModel)]="selectedUser.first_name" required formControlName="first_name" type="text"
+                                name="first_name" class="form-control" id="first_name" aria-describedby="emailHelp"
+                                placeholder="First Name">
+                            <div class="valid-feedback">Good choice, I like this change!</div>
+                            <div class="invalid-feedback">First name required!</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+                            <input [(ngModel)]="selectedUser.last_name" required formControlName="last_name" required
+                                type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name">
+                            <div class="valid-feedback">Good choice, I like this change!</div>
+                            <div class="invalid-feedback">Last name required!</div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="close-edit-user-form" data-dismiss="modal"
+                                class="btn btn-secondary">Close</button>
+                            <button [disabled]="!editForm.valid" type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
