@@ -22,7 +22,7 @@
 </div>
 <div mat-dialog-actions [align]="'end'">
     <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-    <button style="margin-left: 8px" mat-raised-button color="primary" (click)="addUser()">
+    <button style="margin-left: 8px" [disabled]="!userForm.valid" mat-raised-button color="primary" (click)="addUser()">
         {{actionBtn}}
     </button>
 </div>
