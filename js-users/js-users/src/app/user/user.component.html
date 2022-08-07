@@ -32,7 +32,7 @@
                             data-original-title="Edit" data-toggle="modal" data-target="#updateUserModal">
                             <i class="fa fa-pencil"></i>
                         </button>
-                        <button (click)="selectUser(user)" type="button" class="btn btn-secondary tooltips"
+                        <button (click)="selectUser(user)" type="button" class="btn btn-danger tooltips"
                             data-original-title="Delete" data-toggle="modal" data-target="#deleteUserModal">
                             <i class="fa fa-times"></i>
                         </button>
@@ -102,7 +102,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="was-validated" [formGroup]="editForm" (ngSubmit)="onUpdateUser()">
+                    <form class="was-validated" [formGroup]="editForm">
                         <div class="form-group">
                             <label for="first_name">First Name</label>
                             <input [(ngModel)]="selectedUser.first_name" required formControlName="first_name" type="text"
@@ -127,4 +127,26 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModelLabel">Delete User</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete user?</p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button (click)="onDeleteUser()" class="btn btn-danger" data-dismiss="modal">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
