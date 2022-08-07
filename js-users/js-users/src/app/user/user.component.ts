@@ -48,4 +48,17 @@ export class UserComponent implements OnInit {
   public selectUser(user: User): void {
     this.selectedUser = user;
   }
+
+  public onAddUser(addForm: NgForm): void {
+    document.getElementById('close-add-user-form')?.click();
+    this.userService.addUser(addForm.form.value).subscribe(
+      (response: User) => {
+        this.users.unshift(response);
+        console.log('User has been added!');
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
 }

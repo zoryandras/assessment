@@ -5,14 +5,18 @@ import { Observable } from 'rxjs';
 import { User } from './user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-  private apiServerUrl = environment.apiBaseUrl
+  private apiServerUrl = environment.apiBaseUrl;
 
-  constructor(private http: HttpClient) { }
-  
+  constructor(private http: HttpClient) {}
+
   public getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.apiServerUrl}`);
+  }
+
+  public addUser(user: User): Observable<User> {
+    return this.http.post<User>(`${this.apiServerUrl}`, user);
   }
 }
