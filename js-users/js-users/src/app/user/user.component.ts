@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { User } from './user';
 import { UserService } from './user.service';
-import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-user',
@@ -66,13 +66,14 @@ export class UserComponent implements OnInit {
     );
   }
 
-  public onUpdateUser(): void {
-    document.getElementById('close-edit-user-form')?.click();
-    this.editForm.value.first_name = this.selectedUser.first_name;
-    this.editForm.value.last_name = this.selectedUser.last_name;
-    this.userService.updateUser(this.editForm.value).subscribe(
-      (response: User) => {
-        console.log('User has been updated');
+  public onDeleteUser(): void {
+    this.userService.deleteUser(this.selectedUser.id).subscribe(
+      (response) => {
+        let indexDeletedUser = this.users.findIndex(
+          (value) => value.id === this.selectedUser.id
+        );
+        this.users.splice(indexDeletedUser, 1);
+        console.log('User has been deleted!');
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
