@@ -27,7 +27,16 @@
                 </div>
                 <div class="card-body">
                     <div class="float-right btn-group btn-group-sm">
-
+                <button (click)="selectUser(user)" type="button" class="btn btn-primary tooltips" data-original-title="Edit"
+                    data-toggle="modal" data-target="#updateUserModal">
+                    <i class="fa fa-pencil"></i>
+                </button>
+                <button (click)="selectUser(user)" type="button" class="btn btn-secondary tooltips" data-original-title="Delete"
+                    data-toggle="modal" data-target="#deleteUserModal">
+                    <i class="fa fa-times"></i>
+                </button>
+                <button>
+                </button>
 
                     </div>
                 </div>
