@@ -14,6 +14,10 @@ export class UserComponent implements OnInit {
   p: number = 1;
   public users!: User[];
   public selectedUser!: User;
+  public editForm = new FormGroup({
+    first_name: new FormControl(''),
+    last_name: new FormControl(''),
+  });
 
   constructor(private userService: UserService) {}
 
@@ -55,6 +59,20 @@ export class UserComponent implements OnInit {
       (response: User) => {
         this.users.unshift(response);
         console.log('User has been added!');
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+
+  public onUpdateUser(): void {
+    document.getElementById('close-edit-user-form')?.click();
+    this.editForm.value.first_name = this.selectedUser.first_name;
+    this.editForm.value.last_name = this.selectedUser.last_name;
+    this.userService.updateUser(this.editForm.value).subscribe(
+      (response: User) => {
+        console.log('User has been updated');
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
