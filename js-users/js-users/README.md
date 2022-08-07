@@ -1,27 +1,46 @@
-# JsUsers
+# User List - Homework for Digital Natives Part II.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+My very first Angular/Typescript/Material UI project ever with CRUD.
 
-## Development server
+For this project I used
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular 14
+- JSON-server
+- Material UI
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Unfortunately I could not get the given API to work. I tried several solutions and asked for professional help, but the 500 error kept coming up.
 
-## Build
+Since I wanted to use the database anyway, and I was curious about how the JSON-server library works, I solved it by making a server that fetches the requested data (I learned something new this way, so it's a win). If you have a solution on how it could be solved, I would really appreciate it, because I am absolutely curious. I do have theories, but honestly in practice I couldn't make it.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The project lists users, which can be edited and deleted. You can also add a new user using the button in the top right corner. The project also includes a filter function to filter users by first name and last name. 
 
-## Running unit tests
+Clicking on the lock button will display the requested style change on the users.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+How to run the page:
 
-## Running end-to-end tests
+- if you haven't install Angular before:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+npm install -g @angular/cli
+```
 
-## Further help
+- install dependencies
+```
+npm i
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- if you haven't install JSON-server before:
+```
+npm install -g json-server
+```
+
+- run JSON-server (it will start on port 3000):
+```
+json-server db.json
+```
+
+- run project:
+```
+ng serve
+```
