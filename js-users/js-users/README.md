@@ -44,3 +44,5 @@ json-server db.json
 ```
 ng serve
 ```
+
+I know it's far from perfect, but I truly enjoyed working with new techs like Angular and Typescript for the first time. I'm pretty sure I will polish it in the coming days, because I really want to hide the 'created at' input field when I'm not adding the user, only edit it. :) :)
