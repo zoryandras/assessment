@@ -16,7 +16,8 @@
 </nav>
 <div class="container" id="main-container">
     <div class="row justify-content-center row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-        <div *ngFor="let user of users | paginate: { itemsPerPage: 10, currentPage: p }; let i = index;" class="col-md-6 col-xl-3">
+        <div *ngFor="let user of users | paginate: { itemsPerPage: 10, currentPage: p }; let i = index;"
+            class="col-md-6 col-xl-3">
             <div class="card m-b-30">
                 <div class="card-body row">
                     <div class="col-sm-8">
@@ -27,17 +28,16 @@
                 </div>
                 <div class="card-body">
                     <div class="float-right btn-group btn-group-sm">
-                <button (click)="selectUser(user)" type="button" class="btn btn-primary tooltips" data-original-title="Edit"
-                    data-toggle="modal" data-target="#updateUserModal">
-                    <i class="fa fa-pencil"></i>
-                </button>
-                <button (click)="selectUser(user)" type="button" class="btn btn-secondary tooltips" data-original-title="Delete"
-                    data-toggle="modal" data-target="#deleteUserModal">
-                    <i class="fa fa-times"></i>
-                </button>
-                <button>
-                </button>
-
+                        <button (click)="selectUser(user)" type="button" class="btn btn-primary tooltips"
+                            data-original-title="Edit" data-toggle="modal" data-target="#updateUserModal">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button (click)="selectUser(user)" type="button" class="btn btn-secondary tooltips"
+                            data-original-title="Delete" data-toggle="modal" data-target="#deleteUserModal">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <button>
+                        </button>
                     </div>
                 </div>
             </div>
