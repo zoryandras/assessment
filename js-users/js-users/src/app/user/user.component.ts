@@ -13,6 +13,7 @@ import { FormControl, FormGroup, NgForm } from '@angular/forms';
 export class UserComponent implements OnInit {
   p: number = 1;
   public users!: User[];
+  public selectedUser!: User;
 
   constructor(private userService: UserService) {}
 
@@ -26,7 +27,9 @@ export class UserComponent implements OnInit {
     }
     let searchedUsers: User[] = [];
     this.users.forEach(
-      (item) => item.first_name.toLowerCase().indexOf(search) > -1 && searchedUsers.push(item)
+      (item) =>
+        item.first_name.toLowerCase().indexOf(search) > -1 &&
+        searchedUsers.push(item)
     );
     this.users = searchedUsers;
   }
@@ -40,5 +43,9 @@ export class UserComponent implements OnInit {
         alert(error.message);
       }
     );
+  }
+
+  public selectUser(user: User): void {
+    this.selectedUser = user;
   }
 }
