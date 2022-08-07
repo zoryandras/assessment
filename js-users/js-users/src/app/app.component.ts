@@ -31,6 +31,8 @@ export class AppComponent implements OnInit {
     this.getAllUser();
   }
 
+  title = 'js-users'
+  
   openDialog() {
     this.dialog
       .open(DialogComponent, {
